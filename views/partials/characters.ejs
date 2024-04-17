@@ -1,0 +1,59 @@
+<% if(player){ %>
+    <% //console.log(player.units[0].data.name) %>
+    <% //let result = characters.find(({ name }) => name === "Doctor Aphra") %>
+    <% //console.log(result.name) %>
+
+    <% player.forEach(unit => { %>
+        <% if(unit.data.url.includes('characters')) {%>
+
+        <% const character = characters.find(({ name }) => name === unit.data.name) %>
+
+        <div class="character">
+
+            <!-- <h2> <%= unit.data.name %> </h2>
+            <h2>Gear lvl: <%= unit.data.gear_level %> </h2>
+            
+            <h2>Stars: <%= unit.data.rarity %> </h2>
+            
+            <h2>Relics: <%= (unit.data.relic_tier - 2) > 1 ? (unit.data.relic_tier) - 2 : 0 %> </h2>
+            <h2>Alignment: <%= character?.alignment // you need the "?" for when it doesn't find a character, so the website doesn't crash %> </h2> -->
+            <h2 class="power">Power: <%= unit.data.power %> </h2>
+            <h2>Stars: <%= unit.data.rarity %> </h2>
+            
+            <% if(character?.alignment === "Light Side"){ %>
+
+                <div class="LightSide">
+                    <img src=<%= character?.image %> alt="<%= character?.description %>">
+                    <% if(unit.data.relic_tier > 1){ %>
+                        <h2 class="LightRelic"><%= unit.data.relic_tier - 2 %></h2>
+                    <% } else { %>
+                        <h2 class="lvl"><%= unit.data.level %></h2>
+                    <% } %>
+                </div>
+                
+            <% } else if(character?.alignment === "Dark Side"){ %>
+                
+                <div class="DarkSide">
+                    <img src=<%= character?.image %> alt="<%= character?.description %>">
+                    <% if(unit.data.relic_tier > 1){ %>
+                        <h2 class="DarkRelic"><%= unit.data.relic_tier - 2 %></h2>
+                    <% } else { %>
+                        <h2 class="lvl"><%= unit.data.level %></h2>
+                    <% } %>
+                </div>
+                
+            <% } else { %>
+                <div class="Neutral">
+                    <img src=<%= character?.image %> alt="<%= character?.description %>">
+                </div>
+            <% } %>
+
+        </div>
+        
+        <% } %>
+        
+    <% }); %>
+
+    
+  
+<% } %>

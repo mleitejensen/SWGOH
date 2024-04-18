@@ -3,11 +3,19 @@
 <head>
   <title>Star Wars Galaxy of Heroes Team Drafting</title>
   <link rel="stylesheet" type="text/css" href="/css/index.css">
-  <script defer src="/scripts/getAllyCode.js" type="application/javascript"></script>
+  <script defer src="/scripts/team-draft.js" type="application/javascript"></script>
 </head>
 <body>
+<h1>Star Wars Galaxy of Heroes Team Drafting</h1>
 
+<div class="draft">
+	<h2>Choose 1</h2>
+	<ul class="team" id="player1-list"></ul>
+</div>
 <div class="container">
+
+	<%- include("./partials/ships.ejs") %>
+
     
 
 <!-- Add more player containers as needed -->

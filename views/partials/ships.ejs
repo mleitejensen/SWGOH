@@ -1,12 +1,12 @@
 <% if(player){ %>
     <% //console.log(player.units[0].data.name) %>
-    <% //let result = characters.find(({ name }) => name === "Doctor Aphra") %>
+    <% //let result = ship.find(({ name }) => name === "Doctor Aphra") %>
     <% //console.log(result.name) %>
 
     <% player.forEach(unit => { %>
         <% if(unit.data.url.includes('ships')) {%>
 
-        <% const character = characters.find(({ name }) => name === unit.data.name) %>
+        <% const ship = ships.find(({ name }) => name === unit.data.name) %>
 
         <div class="character">
 
@@ -16,15 +16,15 @@
             <h2>Stars: <%= unit.data.rarity %> </h2>
             
             <h2>Relics: <%= (unit.data.relic_tier - 2) > 1 ? (unit.data.relic_tier) - 2 : 0 %> </h2>
-            <h2>Alignment: <%= character?.alignment // you need the "?" for when it doesn't find a character, so the website doesn't crash %> </h2> -->
+            <h2>Alignment: <%= ship?.alignment // you need the "?" for when it doesn't find a ship, so the website doesn't crash %> </h2> -->
             <h2 class="power">Power: <%= unit.data.power %> </h2>
             <h2>Stars: <%= unit.data.rarity %> </h2>
             
-            <% if(character?.alignment === "Light Side"){ %>
+            <% if(ship?.alignment === "Light Side"){ %>
 
-                <div class="LightSide">
-                    <h2><%= character?.name%></h2>
-                    <img src=<%= character?.image %> alt="<%= character?.description %>">
+                <div class="LightSideShip">
+                    <h2><%= ship?.name%></h2>
+                    <img src=<%= ship?.image %> alt="<%= ship?.description %>">
                     <% if(unit.data.relic_tier > 1){ %>
                         <h2 class="LightRelic"><%= unit.data.relic_tier - 2 %></h2>
                     <% } else { %>
@@ -32,11 +32,11 @@
                     <% } %>
                 </div>
                 
-            <% } else if(character?.alignment === "Dark Side"){ %>
+            <% } else if(ship?.alignment === "Dark Side"){ %>
                 
-                <div class="DarkSide">
-                    <h2><%= character?.name%></h2>
-                    <img src=<%= character?.image %> alt="<%= character?.description %>">
+                <div class="DarkSideShip">
+                    <h2><%= ship?.name%></h2>
+                    <img src=<%= ship?.image %> alt="<%= ship?.description %>">
                     <% if(unit.data.relic_tier > 1){ %>
                         <h2 class="DarkRelic"><%= unit.data.relic_tier - 2 %></h2>
                     <% } else { %>
@@ -45,9 +45,9 @@
                 </div>
                 
             <% } else { %>
-                <div class="Neutral">
+                <div class="NeutralShip">
                     <h2><%= unit?.data?.name%></h2>
-                    <img src=<%= `https://game-assets.swgoh.gg/tex.charui_${unit?.data?.name.toLowerCase()}.png` %> alt="<%= character?.description %>">
+                    <img src=<%= ship.image %> alt="<%= ship?.description %>">
                 </div>
             <% } %>
 

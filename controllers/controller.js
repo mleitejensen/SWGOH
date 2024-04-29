@@ -23,10 +23,10 @@ const get_fleet = async (req, res) => {
     const playerData = await playerResponse.json()
     let sortedPlayerData = playerData.units.sort((char1, char2) => (char1.data.power < char2.data.power) ? 1 : (char1.data.power > char2.data.power) ? -1 : 0);
     
-    const charactersResponse = await fetch("https://swgoh.gg/api/characters")
-    const charactersData = await charactersResponse.json()
+    const shipsResponse = await fetch("https://swgoh.gg/api/ships")
+    const shipsData = await shipsResponse.json()
 
-    res.render("Fleet", { player: sortedPlayerData, characters: charactersData })
+    res.render("Fleet", { player: sortedPlayerData, ships: shipsData })
 }
 
 

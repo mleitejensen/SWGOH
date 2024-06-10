@@ -52,8 +52,8 @@ img{
 .LightRelic {
     background-image: url(https://assets.swgoh.gg/files/assets/relic-badge-atlas.8898668e08d997e6.png);
     background-size: 100%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     position: absolute;
     bottom: 48px;
     left: 50%;
@@ -140,8 +140,8 @@ img{
     object-fit: contain;
     max-width: 134px;
     max-height: 134px;
-    height: 80%;
-    width: 80%;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     border: 3px solid rgb(16, 133, 211);
 }
@@ -151,8 +151,8 @@ img{
     object-fit: contain;
     max-width: 134px;
     max-height: 134px;
-    height: 80%;
-    width: 80%;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     border: 3px solid rgb(204, 32, 2);
 }
@@ -161,6 +161,8 @@ img{
     object-fit: contain;
     max-width: 134px;
     max-height: 134px;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     border: 3px solid grey;
 }
